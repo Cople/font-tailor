@@ -1,0 +1,69 @@
+{
+  "build": {
+    "devPath": "../src",
+    "distDir": "../src",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "Font Tailor",
+    "version": "0.0.1"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": true,
+        "scope": [
+          {
+            "name": "pyftsubset",
+            "cmd": "pyftsubset",
+            "args": true
+          }
+        ]
+      },
+      "dialog": {
+        "all": true
+      },
+      "fs": {
+        "readFile": true,
+        "writeFile": true,
+        "createDir": true,
+        "scope": ["$APPLOCALDATA/**/*"]
+      },
+      "path": {
+        "all": true
+      },
+      "window": {
+        "startDragging": true
+      }
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "center": true,
+        "resizable": true,
+        "title": "Font Tailor",
+        "titleBarStyle": "Overlay",
+        "width": 600,
+        "height": 500,
+        "minWidth": 500,
+        "minHeight": 300
+      }
+    ],
+    "security": {
+      "csp": null
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.fonttailor.c7x",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ]
+    }
+  }
+}

@@ -1,0 +1,165 @@
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, PingFang SC, Microsoft YaHei, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  -webkit-user-select: none;
+  user-select: none;
+  background-image: linear-gradient(to bottom, #FFDC30, #FFB33F);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: rgba(0, 0, 0, .5);
+}
+
+#titlebar {
+  height: 30px;
+}
+
+#app {
+  flex: 1;
+  cursor: default;
+}
+
+form {
+  padding: 1em;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+:focus {
+  outline: 3px solid #F89522;
+  outline-offset: 0;
+}
+
+input,
+textarea {
+  margin: 0;
+  font-size: 100%;
+  background: rgba(255, 255, 255, .9);
+  border-radius: .5em;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+  transition: background .2s;
+}
+
+input {
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+textarea {
+  flex: 1;
+  display: block;
+  width: 100%;
+  height: 10em;
+  resize: none;
+  padding: .5em;
+  margin: 0 0 1em;
+  font-family: 'UserSelectedFont', system-ui, sans-serif;
+}
+
+textarea:focus {
+  background: #FFF;
+}
+
+button {
+  display: block;
+  width: 100%;
+  height: 44px;
+  border: none;
+  background: #1A1A1A;
+  color: #FFF;
+  border-radius: .5em;
+  font-size: 100%;
+  cursor: pointer;
+  margin-bottom: 1em;
+  transition: background .2s;
+}
+
+button:hover {
+  background: #000;
+}
+
+.field {
+  margin-bottom: 1em;
+}
+
+#file-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: auto;
+  font-size: 100%;
+  color: #000;
+  border-radius: .5em;
+  background: rgba(255, 255, 255, .1);
+  border: 1px dashed #F99B20;
+  transition: .2s;
+}
+
+#file-picker .icon {
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: .5em;
+}
+
+#file-picker:hover {
+  background: rgba(255, 255, 255, .2);
+  border-color: #f89720;
+}
+
+#file-picker.has-file {
+  border: none;
+  color: #FFF;
+  background: #F99B20;
+}
+
+#file-picker.has-file:hover {
+  background: #F89520;
+}
+
+#field-types span {
+  margin-right: .5em;
+}
+
+#field-types label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1em;
+}
+
+#field-types input {
+  accent-color: currentColor;
+  margin-right: .5em;
+}
+
+form > :last-child {
+  margin-bottom: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+}

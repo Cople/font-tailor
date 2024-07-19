@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tauri App</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="/main.js" defer></script>
+  <style id="font-css"></style>
+</head>
+
+<body>
+  <div data-tauri-drag-region id="titlebar"></div>
+
+  <div id="app">
+    <form @submit.prevent="handleSubmit">
+      <textarea placeholder="Characters..." v-model="characters" required></textarea>
+      
+      <button id="file-picker" :class="{ 'has-file': fileName }" type="button" @click="handlePick">
+        <img class="icon" src="loader.svg" v-if="loading" />
+        {{ fileName || 'Choose a file or drag it here' }}
+      </button>
+
+      <div class="field" id="field-types">
+        <span>Output formats:</span>
+        <label><input type="checkbox" v-model="types" value="original" /> TTF/OTF</label>
+        <label><input type="checkbox" v-model="types" value="woff" /> WOFF</label>
+        <label><input type="checkbox" v-model="types" value="woff2" /> WOFF2</label>
+        <label><input type="checkbox" v-model="types" value="css" /> CSS</label>
+      </div>
+    
+      <button id="submit">Generate Subset</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+[package]
+name = "font-tailor"
+version = "0.0.0"
+description = "A Tauri App"
+authors = ["you"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "1", features = [] }
+
+[dependencies]
+tauri = { version = "1", features = [ "path-all", "window-start-dragging", "shell-all", "fs-write-file", "dialog-all", "fs-create-dir", "fs-read-file"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+fix-path-env = { git = "https://github.com/tauri-apps/fix-path-env-rs" }
+
+[features]
+# This feature is used for production builds or when a dev server is not specified, DO NOT REMOVE!!
+custom-protocol = ["tauri/custom-protocol"]
